@@ -12,17 +12,16 @@ import { IndexdbApiserver } from './../setting/indexdbApiserver.model';
 
 export class SettingComponent implements OnInit{
   apiservers: IndexdbApiserver[];
-  newApiserver: Apiserver;
 
   constructor(private indexdbService: IndexdbService) { };
 
   ngOnInit() {
     this.getApiservers();
-    this.newApiserver = {ip:'', token: ''};
   }
 
-  addApiserver(data: Apiserver) {
-    this.indexdbService.addDataToApiserver(data);
+  addApiserver(newIp: string, newToken: string) {
+    this.indexdbService.addDataToApiserver(<Apiserver>{ip: newIp, token: newToken});
+    this.getApiservers();
   }
 
   getApiservers() {

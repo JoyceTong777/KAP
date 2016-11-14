@@ -24,16 +24,16 @@
     <div class="row">
       <label class="col-sm-2 control-label">Ip address</label>
       <div class="col-sm-9">
-        <input type="email" class="form-control" [(ngModel)]="newApiserver.ip" name="newIp" placeholder="new ip">
+        <input #newIp type="text" class="form-control" newIp.value='' placeholder="new ip">
       </div>
-      <button type="button" class="btn btn-success" (click)="addApiserver(newApiserver)"><span class="glyphicon glyphicon-plus"></span></button>
+      <button type="button" class="btn btn-success" (click)="addApiserver(newIp.value, newToken.value); newIp.value=''; newToken.value=''"><span class="glyphicon glyphicon-plus"></span></button>
     </div>
   </div>
   <div class="form-group">
     <div class="row">
       <label class="col-sm-2 control-label">Token</label>
       <div class="col-sm-9">
-        <input type="password" class="form-control" [(ngModel)]="newApiserver.token" name="newToken" placeholder="new token">
+        <input #newToken type="password" class="form-control" newToken.value='' placeholder="new token">
       </div>
     </div>
   </div>
