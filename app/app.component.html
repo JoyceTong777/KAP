@@ -1,0 +1,22 @@
+<!-- Static navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">KAP</a>
+    </div>
+    <div class="nav navbar-nav">
+      <ul class="nav navbar-nav">
+        <li><a routerLink="/about"><span class="glyphicon glyphicon-home"></span> About </a></li>
+        <li><a routerLink="/cluster"> <span class="glyphicon glyphicon-tasks"></span> Cluster </a></li>
+        <li><a routerLink="/query"> <span class="glyphicon glyphicon-search"></span> Query</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a routerLink="/setting"><span class="glyphicon glyphicon-cog"></span> Setting </a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container-fluid -->
+</nav>
+
+<div class="container">
+<router-outlet></router-outlet>
+</div>
