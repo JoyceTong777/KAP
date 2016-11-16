@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-
 @Component({
   selector: 'tg-about',
   moduleId: module.id,

@@ -1,11 +1,21 @@
+
 import { Injectable } from '@angular/core';
-import { Apiserver } from './../setting/apiserver.model';
-import { IndexdbApiserver } from './../setting/indexdbApiserver.model';
+import { IndexdbApiserver } from './../model/indexdbApiserver.model';
+import { Apiserver } from './../model/apiserver.model';
+
+
+//import { co } from 'co';
+
 declare var Dexie: any;
 
 @Injectable()
 export class IndexdbService {
-  dbInstance = new Dexie('KapDatabase');
+  private dbInstance: any;
+
+  constructor() {
+    this.dbInstance = new Dexie('KapDatabase');
+    this.createApiserverSchema();
+  };
 
   openDatabase() {
     this.dbInstance.open().catch(function(error: any) {
@@ -15,19 +25,27 @@ export class IndexdbService {
 
   createApiserverSchema() {
     this.dbInstance.version(1).stores({
-      apiserver: '++id, ip, token'
+      apiserver: '++id, name, ip, token, dashboardIp'
     });
   }
 
   addDataToApiserver(apiserver: Apiserver) {
-    this.dbInstance.apiserver.add({ip: apiserver.ip, token: apiserver.token});
+    this.dbInstance.apiserver.add({name: apiserver.name,
+      ip: apiserver.ip,
+      token: apiserver.token,
+      dashboardIp: apiserver.dashboardIp});
   }
 
   getDataFromApiserver() {
     let apiserverList: IndexdbApiserver[] = [];
       this.dbInstance.apiserver.toArray().then(function(apiservers: any) {
          for (let apiserver of apiservers) {
-           apiserverList.push(<IndexdbApiserver>{id: apiserver.id, ip: apiserver.ip, token: apiserver.token});
+           apiserverList.push(<IndexdbApiserver>{id: apiserver.id,
+             name: apiserver.name,
+             ip: apiserver.ip,
+             token: apiserver.token,
+             dashboardIp: apiserver.dashboardIp
+            });
          }
       });
     return apiserverList;
@@ -38,7 +56,30 @@ export class IndexdbService {
   }
 
   updateDataFromApiserver(apiserver: IndexdbApiserver) {
-    this.dbInstance.apiserver.update(apiserver.id, {ip: apiserver.ip, token: apiserver.token});
+    this.dbInstance.apiserver.update(apiserver.id, {name: apiserver.name,
+      ip: apiserver.ip,
+      token: apiserver.token,
+      dashboardIp: apiserver.dashboardIp});
+  }
+
+  getPromiseDataFromApiserver() {
+    let dbInstance = this.dbInstance;
+    return new Promise(function(resolve, reject) {
+      let apiserverList: IndexdbApiserver[] = [];
+      dbInstance.apiserver.toArray().then(function(apiservers: any) {
+        for (let apiserver of apiservers) {
+          apiserverList.push(<IndexdbApiserver>{id: apiserver.id,
+             name: apiserver.name,
+             ip: apiserver.ip,
+             token: apiserver.token,
+             dashboardIp: apiserver.dashboardIp
+            });
+         }
+        resolve(apiserverList);
+      })
+
+
+    });
   }
 }
 

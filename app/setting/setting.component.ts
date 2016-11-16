@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import { IndexdbService } from './../shared/indexdb.service';
 
-import { Apiserver } from './apiserver.model';
-import { IndexdbApiserver } from './../setting/indexdbApiserver.model';
+import { IndexdbApiserver } from './../model/indexdbApiserver.model';
+import { Apiserver } from './../model/apiserver.model';
 
 @Component({
   selector: 'tg-setting',
@@ -13,14 +13,15 @@ import { IndexdbApiserver } from './../setting/indexdbApiserver.model';
 export class SettingComponent implements OnInit{
   apiservers: IndexdbApiserver[];
 
-  constructor(private indexdbService: IndexdbService) { };
+ // constructor(private indexdbService: IndexdbService) { };
+ constructor(private indexdbService: IndexdbService) { };
 
   ngOnInit() {
     this.getApiservers();
   }
 
-  addApiserver(newIp: string, newToken: string) {
-    this.indexdbService.addDataToApiserver(<Apiserver>{ip: newIp, token: newToken});
+  addApiserver(newName: string, newIp: string, newToken: string, newDashboardIp: string) {
+    this.indexdbService.addDataToApiserver(<Apiserver>{name: newName, ip: newIp, token: newToken, dashboardIp: newDashboardIp});
     this.getApiservers();
   }
 

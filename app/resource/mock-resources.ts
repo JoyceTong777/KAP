@@ -1,6 +1,6 @@
-import { Resource } from './resource';
 
-export const RESOURCES: Resource[] = [
+
+export const RESOURCES: Object[] = [
   {
     "services": [
       {
@@ -1942,8 +1942,452 @@ export const RESOURCES: Resource[] = [
               "containerID": "docker://a1929aca074bf40131e6424205fe941299395abf8f690742d4bdfc29fcd1a063"
             }
           ]
+          
         }
       }
-    ]
+    ],
+      "nodes": [
+    {
+      "metadata": {
+        "name": "gke-cluster-kap-default-pool-07c56901-51cp",
+        "selfLink": "/api/v1/nodes/gke-cluster-kap-default-pool-07c56901-51cp",
+        "uid": "3b45fb9c-a9d8-11e6-b428-42010af00141",
+        "resourceVersion": "283637",
+        "creationTimestamp": "2016-11-13T19:34:45Z",
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/instance-type": "f1-micro",
+          "beta.kubernetes.io/os": "linux",
+          "cloud.google.com/gke-nodepool": "default-pool",
+          "failure-domain.beta.kubernetes.io/region": "us-central1",
+          "failure-domain.beta.kubernetes.io/zone": "us-central1-a",
+          "kubernetes.io/hostname": "gke-cluster-kap-default-pool-07c56901-51cp"
+        },
+        "annotations": {
+          "volumes.kubernetes.io/controller-managed-attach-detach": "true"
+        }
+      },
+      "spec": {
+        "podCIDR": "10.104.0.0/24",
+        "externalID": "3106233720680808776",
+        "providerID": "gce://authentic-genre-131206/us-central1-a/gke-cluster-kap-default-pool-07c56901-51cp"
+      },
+      "status": {
+        "capacity": {
+          "alpha.kubernetes.io/nvidia-gpu": "0",
+          "cpu": "1",
+          "memory": "606884Ki",
+          "pods": "110"
+        },
+        "allocatable": {
+          "alpha.kubernetes.io/nvidia-gpu": "0",
+          "cpu": "1",
+          "memory": "606884Ki",
+          "pods": "110"
+        },
+        "conditions": [
+          {
+            "type": "NetworkUnavailable",
+            "status": "False",
+            "lastHeartbeatTime": "2016-11-15T20:58:04Z",
+            "lastTransitionTime": "2016-11-15T20:58:04Z",
+            "reason": "RouteCreated",
+            "message": "RouteController created a route"
+          },
+          {
+            "type": "OutOfDisk",
+            "status": "False",
+            "lastHeartbeatTime": "2016-11-15T20:58:05Z",
+            "lastTransitionTime": "2016-11-13T19:34:45Z",
+            "reason": "KubeletHasSufficientDisk",
+            "message": "kubelet has sufficient disk space available"
+          },
+          {
+            "type": "MemoryPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2016-11-15T20:58:05Z",
+            "lastTransitionTime": "2016-11-13T19:34:45Z",
+            "reason": "KubeletHasSufficientMemory",
+            "message": "kubelet has sufficient memory available"
+          },
+          {
+            "type": "DiskPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2016-11-15T20:58:05Z",
+            "lastTransitionTime": "2016-11-13T19:34:45Z",
+            "reason": "KubeletHasNoDiskPressure",
+            "message": "kubelet has no disk pressure"
+          },
+          {
+            "type": "Ready",
+            "status": "True",
+            "lastHeartbeatTime": "2016-11-15T20:58:05Z",
+            "lastTransitionTime": "2016-11-13T19:35:15Z",
+            "reason": "KubeletReady",
+            "message": "kubelet is posting ready status. AppArmor enabled"
+          }
+        ],
+        "addresses": [
+          {
+            "type": "InternalIP",
+            "address": "10.128.0.2"
+          },
+          {
+            "type": "ExternalIP",
+            "address": "104.197.84.9"
+          }
+        ],
+        "daemonEndpoints": {
+          "kubeletEndpoint": {
+            "Port": 10250
+          }
+        },
+        "nodeInfo": {
+          "machineID": "e32858d013fd78e5ea6ab8a75828bfba",
+          "systemUUID": "B1026B1B-523E-4F1E-1706-FC0B5FD2792D",
+          "bootID": "0720d41d-b222-43d7-a812-d0b51616c8fc",
+          "kernelVersion": "4.4.21+",
+          "osImage": "Google Container-VM Image",
+          "containerRuntimeVersion": "docker://1.11.2",
+          "kubeletVersion": "v1.4.5",
+          "kubeProxyVersion": "v1.4.5",
+          "operatingSystem": "linux",
+          "architecture": "amd64"
+        },
+        "images": [
+          {
+            "names": [
+              "gcr.io/google_containers/fluentd-gcp:1.21"
+            ],
+            "sizeBytes": 498422559
+          },
+          {
+            "names": [
+              "gcr.io/google_containers/kube-proxy:604c3cbc73e98642406245f4fff461ee"
+            ],
+            "sizeBytes": 202682120
+          },
+          {
+            "names": [
+              "gcr.io/google_containers/kubedns-amd64:1.8"
+            ],
+            "sizeBytes": 57892132
+          },
+          {
+            "names": [
+              "gcr.io/google_containers/exechealthz-amd64:1.2"
+            ],
+            "sizeBytes": 8374840
+          },
+          {
+            "names": [
+              "gcr.io/google_containers/defaultbackend:1.0"
+            ],
+            "sizeBytes": 7510068
+          },
+          {
+            "names": [
+              "gcr.io/google_containers/kube-dnsmasq-amd64:1.4"
+            ],
+            "sizeBytes": 5126001
+          },
+          {
+            "names": [
+              "gcr.io/google_containers/pause-amd64:3.0"
+            ],
+            "sizeBytes": 746888
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "name": "gke-cluster-kap-default-pool-07c56901-9rhk",
+        "selfLink": "/api/v1/nodes/gke-cluster-kap-default-pool-07c56901-9rhk",
+        "uid": "3d5cbb41-a9d8-11e6-b428-42010af00141",
+        "resourceVersion": "283634",
+        "creationTimestamp": "2016-11-13T19:34:48Z",
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/instance-type": "f1-micro",
+          "beta.kubernetes.io/os": "linux",
+          "cloud.google.com/gke-nodepool": "default-pool",
+          "failure-domain.beta.kubernetes.io/region": "us-central1",
+          "failure-domain.beta.kubernetes.io/zone": "us-central1-a",
+          "kubernetes.io/hostname": "gke-cluster-kap-default-pool-07c56901-9rhk"
+        },
+        "annotations": {
+          "volumes.kubernetes.io/controller-managed-attach-detach": "true"
+        }
+      },
+      "spec": {
+        "podCIDR": "10.104.1.0/24",
+        "externalID": "8918780470377120072",
+        "providerID": "gce://authentic-genre-131206/us-central1-a/gke-cluster-kap-default-pool-07c56901-9rhk"
+      },
+      "status": {
+        "capacity": {
+          "alpha.kubernetes.io/nvidia-gpu": "0",
+          "cpu": "1",
+          "memory": "606884Ki",
+          "pods": "110"
+        },
+        "allocatable": {
+          "alpha.kubernetes.io/nvidia-gpu": "0",
+          "cpu": "1",
+          "memory": "606884Ki",
+          "pods": "110"
+        },
+        "conditions": [
+          {
+            "type": "NetworkUnavailable",
+            "status": "False",
+            "lastHeartbeatTime": "2016-11-15T20:58:04Z",
+            "lastTransitionTime": "2016-11-15T20:58:04Z",
+            "reason": "RouteCreated",
+            "message": "RouteController created a route"
+          },
+          {
+            "type": "OutOfDisk",
+            "status": "False",
+            "lastHeartbeatTime": "2016-11-15T20:57:59Z",
+            "lastTransitionTime": "2016-11-13T19:34:48Z",
+            "reason": "KubeletHasSufficientDisk",
+            "message": "kubelet has sufficient disk space available"
+          },
+          {
+            "type": "MemoryPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2016-11-15T20:57:59Z",
+            "lastTransitionTime": "2016-11-13T19:34:48Z",
+            "reason": "KubeletHasSufficientMemory",
+            "message": "kubelet has sufficient memory available"
+          },
+          {
+            "type": "DiskPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2016-11-15T20:57:59Z",
+            "lastTransitionTime": "2016-11-13T19:34:48Z",
+            "reason": "KubeletHasNoDiskPressure",
+            "message": "kubelet has no disk pressure"
+          },
+          {
+            "type": "Ready",
+            "status": "True",
+            "lastHeartbeatTime": "2016-11-15T20:57:59Z",
+            "lastTransitionTime": "2016-11-13T19:35:21Z",
+            "reason": "KubeletReady",
+            "message": "kubelet is posting ready status. AppArmor enabled"
+          }
+        ],
+        "addresses": [
+          {
+            "type": "InternalIP",
+            "address": "10.128.0.4"
+          },
+          {
+            "type": "ExternalIP",
+            "address": "104.154.72.54"
+          }
+        ],
+        "daemonEndpoints": {
+          "kubeletEndpoint": {
+            "Port": 10250
+          }
+        },
+        "nodeInfo": {
+          "machineID": "4d1ae38dc87bfb89c49bce685828bfbd",
+          "systemUUID": "1952567F-4D63-847F-F776-202EA62EC461",
+          "bootID": "ed4054c8-989a-4b0d-ad61-eb9621941190",
+          "kernelVersion": "4.4.21+",
+          "osImage": "Google Container-VM Image",
+          "containerRuntimeVersion": "docker://1.11.2",
+          "kubeletVersion": "v1.4.5",
+          "kubeProxyVersion": "v1.4.5",
+          "operatingSystem": "linux",
+          "architecture": "amd64"
+        },
+        "images": [
+          {
+            "names": [
+              "gcr.io/google_containers/fluentd-gcp:1.21"
+            ],
+            "sizeBytes": 498422559
+          },
+          {
+            "names": [
+              "gcr.io/google_containers/kube-proxy:604c3cbc73e98642406245f4fff461ee"
+            ],
+            "sizeBytes": 202682120
+          },
+          {
+            "names": [
+              "gcr.io/google_containers/heapster:v1.2.0"
+            ],
+            "sizeBytes": 177836395
+          },
+          {
+            "names": [
+              "gcr.io/google_containers/kubernetes-dashboard-amd64:v1.4.0"
+            ],
+            "sizeBytes": 86267953
+          },
+          {
+            "names": [
+              "gcr.io/google_containers/addon-resizer:1.6"
+            ],
+            "sizeBytes": 48784610
+          },
+          {
+            "names": [
+              "gcr.io/google_containers/pause-amd64:3.0"
+            ],
+            "sizeBytes": 746888
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "name": "gke-cluster-kap-default-pool-07c56901-n74b",
+        "selfLink": "/api/v1/nodes/gke-cluster-kap-default-pool-07c56901-n74b",
+        "uid": "3e6c79de-a9d8-11e6-b428-42010af00141",
+        "resourceVersion": "283635",
+        "creationTimestamp": "2016-11-13T19:34:50Z",
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/instance-type": "f1-micro",
+          "beta.kubernetes.io/os": "linux",
+          "cloud.google.com/gke-nodepool": "default-pool",
+          "failure-domain.beta.kubernetes.io/region": "us-central1",
+          "failure-domain.beta.kubernetes.io/zone": "us-central1-a",
+          "kubernetes.io/hostname": "gke-cluster-kap-default-pool-07c56901-n74b"
+        },
+        "annotations": {
+          "volumes.kubernetes.io/controller-managed-attach-detach": "true"
+        }
+      },
+      "spec": {
+        "podCIDR": "10.104.2.0/24",
+        "externalID": "2058770946139160904",
+        "providerID": "gce://authentic-genre-131206/us-central1-a/gke-cluster-kap-default-pool-07c56901-n74b"
+      },
+      "status": {
+        "capacity": {
+          "alpha.kubernetes.io/nvidia-gpu": "0",
+          "cpu": "1",
+          "memory": "606884Ki",
+          "pods": "110"
+        },
+        "allocatable": {
+          "alpha.kubernetes.io/nvidia-gpu": "0",
+          "cpu": "1",
+          "memory": "606884Ki",
+          "pods": "110"
+        },
+        "conditions": [
+          {
+            "type": "NetworkUnavailable",
+            "status": "False",
+            "lastHeartbeatTime": "2016-11-15T20:58:04Z",
+            "lastTransitionTime": "2016-11-15T20:58:04Z",
+            "reason": "RouteCreated",
+            "message": "RouteController created a route"
+          },
+          {
+            "type": "OutOfDisk",
+            "status": "False",
+            "lastHeartbeatTime": "2016-11-15T20:57:59Z",
+            "lastTransitionTime": "2016-11-13T19:34:50Z",
+            "reason": "KubeletHasSufficientDisk",
+            "message": "kubelet has sufficient disk space available"
+          },
+          {
+            "type": "MemoryPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2016-11-15T20:57:59Z",
+            "lastTransitionTime": "2016-11-13T19:34:50Z",
+            "reason": "KubeletHasSufficientMemory",
+            "message": "kubelet has sufficient memory available"
+          },
+          {
+            "type": "DiskPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2016-11-15T20:57:59Z",
+            "lastTransitionTime": "2016-11-13T19:34:50Z",
+            "reason": "KubeletHasNoDiskPressure",
+            "message": "kubelet has no disk pressure"
+          },
+          {
+            "type": "Ready",
+            "status": "True",
+            "lastHeartbeatTime": "2016-11-15T20:57:59Z",
+            "lastTransitionTime": "2016-11-13T19:35:21Z",
+            "reason": "KubeletReady",
+            "message": "kubelet is posting ready status. AppArmor enabled"
+          }
+        ],
+        "addresses": [
+          {
+            "type": "InternalIP",
+            "address": "10.128.0.3"
+          },
+          {
+            "type": "ExternalIP",
+            "address": "104.154.75.116"
+          }
+        ],
+        "daemonEndpoints": {
+          "kubeletEndpoint": {
+            "Port": 10250
+          }
+        },
+        "nodeInfo": {
+          "machineID": "251e40da4fe19bf6792a6e665828bfbd",
+          "systemUUID": "EED55053-AF0F-B7CF-D938-A03F0CC4EA19",
+          "bootID": "c7347056-a7ca-4bf7-b1d4-741c2d46e153",
+          "kernelVersion": "4.4.21+",
+          "osImage": "Google Container-VM Image",
+          "containerRuntimeVersion": "docker://1.11.2",
+          "kubeletVersion": "v1.4.5",
+          "kubeProxyVersion": "v1.4.5",
+          "operatingSystem": "linux",
+          "architecture": "amd64"
+        },
+        "images": [
+          {
+            "names": [
+              "gcr.io/google_containers/fluentd-gcp:1.21"
+            ],
+            "sizeBytes": 498422559
+          },
+          {
+            "names": [
+              "gcr.io/google_containers/kube-proxy:604c3cbc73e98642406245f4fff461ee"
+            ],
+            "sizeBytes": 202682120
+          },
+          {
+            "names": [
+              "gcr.io/google_containers/heapster:v1.2.0"
+            ],
+            "sizeBytes": 177836395
+          },
+          {
+            "names": [
+              "gcr.io/google_containers/addon-resizer:1.6"
+            ],
+            "sizeBytes": 48784610
+          },
+          {
+            "names": [
+              "gcr.io/google_containers/pause-amd64:3.0"
+            ],
+            "sizeBytes": 746888
+          }
+        ]
+      }
+    }
+  ]
   }
 ]

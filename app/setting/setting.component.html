@@ -1,12 +1,20 @@
 <form class="form-horizontal" *ngFor="let apiserver of apiservers">
   <div class="form-group">
     <div class="row">
+      <label class="col-sm-2 control-label" >Cluster name</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" [(ngModel)]="apiserver.name" name="name_{{apiserver.id}}">
+      </div>
+      <button type="button" class="btn btn-warning" (click)="deleteApiserver(apiserver.id)"><span class="glyphicon glyphicon-trash"></span></button>
+      <button type="button" class="btn btn-info" (click)="updateApiserver(apiserver)"><span class="glyphicon glyphicon-pencil"></span></button>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="row">
       <label class="col-sm-2 control-label">Ip address</label>
       <div class="col-sm-9">
        <input type="text" class="form-control" [(ngModel)]="apiserver.ip" name="id_{{apiserver.id}}">
       </div>
-      <button type="button" class="btn btn-warning" (click)="deleteApiserver(apiserver.id)"><span class="glyphicon glyphicon-trash"></span></button>
-      <button type="button" class="btn btn-info" (click)="updateApiserver(apiserver)"><span class="glyphicon glyphicon-pencil"></span></button>
     </div>
   </div>
   <div class="form-group">
@@ -17,23 +25,47 @@
       </div>
     </div>
   </div>
+  <div class="form-group">
+    <div class="row">
+      <label class="col-sm-2 control-label" >Dashboard ip</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" [(ngModel)]="apiserver.dashboardIp" name="dashboardIp_{{apiserver.id}}">
+      </div>
+    </div>
+  </div>
 </form>
 
 <form class="form-horizontal">
+  <div class="form-group">
+    <div class="row">
+      <label class="col-sm-2 control-label">Cluster name</label>
+      <div class="col-sm-9">
+        <input #newName type="text" class="form-control" newName.value='' placeholder="new name">
+      </div>
+      <button type="button" class="btn btn-success" (click)="addApiserver(newName.value, newIp.value, newToken.value, newDashboardIp.value); newName.value = ''; newIp.value=''; newToken.value=''; newDashboardIp.value=''"><span class="glyphicon glyphicon-plus"></span></button>
+    </div>
+  </div>
   <div class="form-group">
     <div class="row">
       <label class="col-sm-2 control-label">Ip address</label>
       <div class="col-sm-9">
         <input #newIp type="text" class="form-control" newIp.value='' placeholder="new ip">
       </div>
-      <button type="button" class="btn btn-success" (click)="addApiserver(newIp.value, newToken.value); newIp.value=''; newToken.value=''"><span class="glyphicon glyphicon-plus"></span></button>
     </div>
   </div>
   <div class="form-group">
     <div class="row">
       <label class="col-sm-2 control-label">Token</label>
       <div class="col-sm-9">
-        <input #newToken type="password" class="form-control" newToken.value='' placeholder="new token">
+        <input #newToken type="text" class="form-control" newToken.value='' placeholder="new token">
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="row">
+      <label class="col-sm-2 control-label">Dashboard ip</label>
+      <div class="col-sm-9">
+        <input #newDashboardIp type="text" class="form-control" newDashboardIp.value='' placeholder="new dashboardIp">
       </div>
     </div>
   </div>
