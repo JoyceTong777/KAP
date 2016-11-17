@@ -12,7 +12,7 @@ e2e/**/*.js.map
 _test-output
 _temp
 
-
+!server
 !karma*.js
 !protractor*.js
 !systemjs.config.js
