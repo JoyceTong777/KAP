@@ -2,6 +2,7 @@
 node_modules
 jspm_packages
 dist
+build
 link-checker-results.txt
 **/*npm-debug.log.*
 *.js

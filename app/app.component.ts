@@ -1,10 +1,9 @@
-
 import { AppModule } from './app.module';
 
 import { Component, OnInit } from '@angular/core';
 import { ResourceService } from './shared/resource.service';
 import { IndexdbService } from './shared/indexdb.service';
-import { ApiserverService } from './shared/aipserver.service';
+
 
 @Component({
   selector: 'tg-app',
@@ -14,13 +13,12 @@ import { ApiserverService } from './shared/aipserver.service';
 })
 export class AppComponent implements OnInit{ 
 
-  constructor(private indexdbService: IndexdbService, private resourceService: ResourceService,) { }
-  //constructor(private indexdbService: IndexdbService) { }
+  constructor(private resourceService: ResourceService) { }
 
   ngOnInit(): void {
  //   this.indexdbService.createApiserverSchema();
  //   this.indexdbService.openDatabase();
-  this.resourceService.getResource();
+  this.resourceService.loadResource();
   }
     
 

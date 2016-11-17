@@ -1,10 +1,6 @@
-
 import { Injectable } from '@angular/core';
 import { IndexdbApiserver } from './../model/indexdbApiserver.model';
 import { Apiserver } from './../model/apiserver.model';
-
-
-//import { co } from 'co';
 
 declare var Dexie: any;
 
@@ -77,8 +73,6 @@ export class IndexdbService {
          }
         resolve(apiserverList);
       })
-
-
     });
   }
 }

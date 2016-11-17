@@ -17,7 +17,9 @@
     "webdriver:update": "webdriver-manager update",
     "html": "find ./app -name '*.html' -type f -exec gcp -rf --parents {} ./dist \\;",
     "css": "find ./app -name '*.css' -type f -exec gcp -rf --parents {} ./dist \\;",
-    "clean": "rm -rf dist/*.*"
+    "clean": "rm -rf dist/*.*",
+    "build": "tsc && gulp",
+    "prod": "npm run build && cd build && npm i && node index.js"
   },
   "keywords": [],
   "author": "",
@@ -40,7 +42,6 @@
     "angular-in-memory-web-api": "~0.1.13",
     "core-js": "^2.4.1",
     "dexie": "^1.5.1",
-    "jquery": "^3.1.1",
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.0.0-beta.12",
     "systemjs": "0.19.40",
@@ -67,7 +68,10 @@
     "@types/core-js": "^0.9.34",
     "@types/node": "^6.0.46",
     "@types/jasmine": "^2.5.36",
-    "@types/selenium-webdriver": "^2.53.33"
+    "@types/selenium-webdriver": "^2.53.33",
+    "gulp": "3.9.1",
+    "gulp-sourcemaps": "2.0.0-alpha",
+    "del": "2.2.0"
   },
   "repository": {}
 }
