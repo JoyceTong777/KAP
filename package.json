@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "QuickStart package.json from the documentation, supplemented with testing support",
   "scripts": {
-    "start": "npm run html && npm run css && tsc && concurrently \"tsc -w\" \"lite-server\" ",
+    "start": "npm run file && tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "docker-build": "docker build -t ng2-quickstart .",
     "docker": "npm run docker-build && docker run -it --rm -p 3000:3000 -p 3001:3001 ng2-quickstart",
     "pree2e": "npm run webdriver:update",
@@ -17,9 +17,12 @@
     "webdriver:update": "webdriver-manager update",
     "html": "find ./app -name '*.html' -type f -exec gcp -rf --parents {} ./dist \\;",
     "css": "find ./app -name '*.css' -type f -exec gcp -rf --parents {} ./dist \\;",
+    "pic": "cp -rf ./app/images ./dist/app",
+    "file": "npm run html && npm run css && npm run pic",
     "clean": "rm -rf dist/*.*",
     "build": "tsc && gulp",
-    "prod": "npm run build && cd build && npm i && node index.js"
+    "prod": "npm run build && cd build && npm i && node index.js",
+    "prebuild": "tsc && npm run file && gulp server && gulp app "
   },
   "keywords": [],
   "author": "",
