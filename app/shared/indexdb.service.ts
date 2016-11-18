@@ -32,6 +32,13 @@ export class IndexdbService {
       dashboardIp: apiserver.dashboardIp});
   }
 
+/**
+ * Get the List of Apiserver info from IndexDB;
+ * 
+ * @returns IndexdbApiserver[]
+ * 
+ * @memberOf IndexdbService
+ */
   getDataFromApiserver() {
     let apiserverList: IndexdbApiserver[] = [];
       this.dbInstance.apiserver.toArray().then(function(apiservers: any) {
@@ -58,6 +65,13 @@ export class IndexdbService {
       dashboardIp: apiserver.dashboardIp});
   }
 
+/**
+ * Get the List of Apiserver info from IndexDB and resolve the data as a Promise;
+ * 
+ * @returns Promise
+ * 
+ * @memberOf IndexdbService
+ */
   getPromiseDataFromApiserver() {
     let dbInstance = this.dbInstance;
     return new Promise(function(resolve, reject) {

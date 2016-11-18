@@ -12,7 +12,7 @@ import { ClusterComponent } from './cluster/cluster.component';
 import { SettingComponent } from './setting/setting.component';
 import { ResourceService } from './shared/resource.service';
 import { IndexdbService } from './shared/indexdb.service';
-import { Http } from '@angular/http';
+
 
 @NgModule({
   imports: [ 

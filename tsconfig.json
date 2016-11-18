@@ -17,6 +17,7 @@
   "compileOnSave": true,
   "exclude": [
     "node_modules/*",
+    "build/node_modules/*",
     "**/*-aot.ts"
   ]
 }
