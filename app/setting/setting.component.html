@@ -1,58 +1,61 @@
-<form class="form-horizontal" *ngFor="let apiserver of apiservers">
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label" >Cluster name</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="apiserver.name" name="name_{{apiserver.id}}">
+<div class="containers">
+  <form class="form-horizontal" *ngFor="let apiserver of apiservers">
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label" >Cluster name</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" [(ngModel)]="apiserver.name" name="name_{{apiserver.id}}">
+      </div>
+      <button type="button" class="btn btn-warning" (click)="deleteApiserver(apiserver.id)"> <i class="fa fa-trash" aria-hidden="true"></i> </button>
+      <button type="button" class="btn btn-info" (click)="updateApiserver(apiserver)"> <i class="fa fa-pencil" aria-hidden="true"></i> </button>
     </div>
-    <button type="button" class="btn btn-warning" (click)="deleteApiserver(apiserver.id)"> <i class="fa fa-trash" aria-hidden="true"></i> </button>
-    <button type="button" class="btn btn-info" (click)="updateApiserver(apiserver)"> <i class="fa fa-pencil" aria-hidden="true"></i> </button>
-  </div>
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">Ip address</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="apiserver.ip" name="id_{{apiserver.id}}">
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Ip address</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" [(ngModel)]="apiserver.ip" name="id_{{apiserver.id}}">
+      </div>
     </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label" >Token</label>
-    <div class="col-sm-9">
-      <input type="password" class="form-control" [(ngModel)]="apiserver.token" name="token_{{apiserver.id}}">
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label" >Token</label>
+      <div class="col-sm-9">
+        <input type="password" class="form-control" [(ngModel)]="apiserver.token" name="token_{{apiserver.id}}">
+      </div>
     </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label" >Dashboard ip</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="apiserver.dashboardIp" name="dashboardIp_{{apiserver.id}}">
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label" >Dashboard ip</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" [(ngModel)]="apiserver.dashboardIp" name="dashboardIp_{{apiserver.id}}">
+      </div>
     </div>
-  </div>
-</form>
+  </form>
 
-<form class="form-horizontal">
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">Cluster name</label>
-    <div class="col-sm-9">
-      <input #newName type="text" class="form-control" newName.value='' placeholder="new name">
+  <form class="form-horizontal">
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Cluster name</label>
+      <div class="col-sm-9">
+        <input #newName type="text" class="form-control" newName.value='' placeholder="new name">
+      </div>
+      <button type="button" class="btn btn-success" (click)="addApiserver(newName.value, newIp.value, newToken.value, newDashboardIp.value); newName.value = ''; newIp.value=''; newToken.value=''; newDashboardIp.value=''"> <i class="fa fa-plus" aria-hidden="true"></i> </button>
     </div>
-    <button type="button" class="btn btn-success" (click)="addApiserver(newName.value, newIp.value, newToken.value, newDashboardIp.value); newName.value = ''; newIp.value=''; newToken.value=''; newDashboardIp.value=''"> <i class="fa fa-plus" aria-hidden="true"></i> </button>
-  </div>
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">Ip address</label>
-    <div class="col-sm-9">
-      <input #newIp type="text" class="form-control" newIp.value='' placeholder="new ip">
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Ip address</label>
+      <div class="col-sm-9">
+        <input #newIp type="text" class="form-control" newIp.value='' placeholder="new ip">
+      </div>
     </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">Token</label>
-    <div class="col-sm-9">
-      <input #newToken type="text" class="form-control" newToken.value='' placeholder="new token">
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Token</label>
+      <div class="col-sm-9">
+        <input #newToken type="text" class="form-control" newToken.value='' placeholder="new token">
+      </div>
     </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">Dashboard ip</label>
-    <div class="col-sm-9">
-      <input #newDashboardIp type="text" class="form-control" newDashboardIp.value='' placeholder="new dashboardIp">
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Dashboard ip</label>
+      <div class="col-sm-9">
+        <input #newDashboardIp type="text" class="form-control" newDashboardIp.value='' placeholder="new dashboardIp">
+      </div>
     </div>
-  </div>
-</form>
+  </form>
+</div>
+
 
 

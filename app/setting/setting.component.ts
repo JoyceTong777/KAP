@@ -7,7 +7,8 @@ import { Apiserver } from './../model/apiserver.model';
 @Component({
   selector: 'tg-setting',
   moduleId: module.id,
-  templateUrl: 'setting.component.html'
+  templateUrl: 'setting.component.html',
+  styleUrls: [ 'setting.component.css' ]
 })
 
 export class SettingComponent implements OnInit{

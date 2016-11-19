@@ -21,7 +21,7 @@ const appRoutes: Routes = [
     component: AboutComponent
   },
   {
-    path: 'clusters',
+    path: 'cluster',
     loadChildren: 'app/cluster/cluster.module#ClusterModule'
   },
   {

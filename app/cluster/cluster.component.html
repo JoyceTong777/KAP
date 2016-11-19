@@ -1,10 +1,1 @@
-<div class="card-columns">
-    <div class="card card-outline-info" *ngFor = "let clusterInfomation of clusterInfomations">
-      <div class="card-block" >
-        <h4 class="card-title">{{clusterInfomation.name}}</h4>
-        <p class="card-text">Node: {{clusterInfomation.nodesStatus}}</p>
-        <p class="card-text">Pod: {{clusterInfomation.podsStatus}}</p>
-        <button class="btn btn-info" (click)="redirect(clusterInfomation.dashboardIp)">Go dashboard</button>
-      </div>
-    </div>
-</div>
+<router-outlet></router-outlet>
