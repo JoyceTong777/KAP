@@ -19,12 +19,10 @@ export class ClusterListComponent implements OnInit {
 
   ngOnInit() {
     let resourceStatics = this.resourceService.getResourceStatistic();
-    console.log(resourceStatics);
     let self = this;
     this.indexdbService.getPromiseDataFromApiserver().then(function(indexdbApiservers: IndexdbApiserver[]) {
       for (let indexdbApiserver of indexdbApiservers) {
         let resourceStatic = resourceStatics[indexdbApiserver.name];
-        console.log(resourceStatic);
         let clusterInfo = {name: indexdbApiserver.name,
           nodesStatus: resourceStatic.nodesStatus,
           podsStatus: resourceStatic.podsStatus,
@@ -32,7 +30,6 @@ export class ClusterListComponent implements OnInit {
         };
         self.clusterInfomations.push(clusterInfo);
       }
-      console.log(self.clusterInfomations);
     });
   }
 

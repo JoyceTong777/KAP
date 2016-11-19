@@ -27,12 +27,30 @@ export class ResourceService {
         let body = JSON.stringify({ip:apiserver.ip ,token: apiserver.token});
         self.http.post('/api', body, options)
           .map((res: Response) => res.json())
-          .subscribe(data => self.resources[apiserver.name] = data);
+          .subscribe(data => self.storeResource(data, apiserver.name));
+//          .subscribe(data => self.resources[apiserver.name] = data);
       }
     })
   };
 
+  storeResource(resource:any, cluster:string) {
+    for (let node of resource['nodes']) {
+      node.cluster = cluster;
+    }
+    for (let pod of resource['pods']) {
+      pod.cluster = cluster;
+    }
+    for (let service of resource['services']) {
+      service.cluster = cluster;
+    }
+    this.resources[cluster] = resource;
+  }
+
   showResource() {
+    return this.resources;
+  };
+
+  getResource() {
     return this.resources;
   };
 

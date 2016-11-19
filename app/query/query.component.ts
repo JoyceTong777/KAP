@@ -1,6 +1,7 @@
 
 import { Component } from '@angular/core';
 import { ResourceService } from './../shared/resource.service';
+import { AlasqldbService } from './../shared/alasqldb.service';
 
 @Component({
   selector: 'tg-query',
@@ -9,9 +10,10 @@ import { ResourceService } from './../shared/resource.service';
 })
 
 export class QueryComponent { 
-  constructor(private resourceService: ResourceService) { }
+  constructor(private resourceService: ResourceService, private alasqldbService: AlasqldbService) { }
 
   consoleResource() {
-    console.log(this.resourceService.showResource());
+    this.alasqldbService.updataDatabase();
+//    console.log(this.alasqldbService.executeCommand('select cluster from nodes'));
   }
 }

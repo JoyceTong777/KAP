@@ -13,6 +13,7 @@ import { QueryComponent } from './query/query.component';
 import { SettingComponent } from './setting/setting.component';
 import { ResourceService } from './shared/resource.service';
 import { IndexdbService } from './shared/indexdb.service';
+import { AlasqldbService } from './shared/alasqldb.service';
 
 @NgModule({
   imports: [ 
@@ -30,7 +31,7 @@ import { IndexdbService } from './shared/indexdb.service';
     QueryComponent 
   ],
   providers: [ 
-    ResourceService, IndexdbService
+    ResourceService, IndexdbService, AlasqldbService
   ],
   bootstrap: [ AppComponent ]
 })

@@ -11,7 +11,7 @@ import { ResourceService } from './shared/resource.service';
 })
 export class AppComponent implements OnInit{ 
 
-  constructor( private resourceService: ResourceService, ) { }
+  constructor( private resourceService: ResourceService) { }
 
   ngOnInit() {
     this.resourceService.loadResource();
