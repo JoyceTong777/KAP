@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { ResourceService } from './../shared/resource.service';
 import { IndexdbService } from './../shared/indexdb.service';
@@ -14,7 +15,7 @@ import { IndexdbApiserver } from './../model/indexdbApiserver.model';
 export class ClusterComponent implements OnInit { 
   clusterInfomations: ClusterInfo[] = [];
 
-  constructor(private indexdbService: IndexdbService, private resourceService: ResourceService) { }
+  constructor(private router: Router, private indexdbService: IndexdbService, private resourceService: ResourceService) { }
 
   ngOnInit() {
     let resourceStatics = this.resourceService.getResourceStatistic();
@@ -33,6 +34,10 @@ export class ClusterComponent implements OnInit {
       }
       console.log(self.clusterInfomations);
     });
+  }
+
+  redirect(ip: string) {
+    this.router.navigate(['/cluster', ip]);
   }
 
 }

@@ -4,15 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
+import { AppRoutingModule } from './app-routing.module';
+import { ClusterModule } from './cluster/cluster.module';
 
 import { AppComponent }  from './app.component';
 import { AboutComponent } from './about/about.component';
 import { QueryComponent } from './query/query.component';
-import { ClusterComponent } from './cluster/cluster.component';
+//import { ClusterComponent } from './cluster/cluster.component';
 import { SettingComponent } from './setting/setting.component';
 import { ResourceService } from './shared/resource.service';
 import { IndexdbService } from './shared/indexdb.service';
-
 
 @NgModule({
   imports: [ 
@@ -20,35 +21,13 @@ import { IndexdbService } from './shared/indexdb.service';
     FormsModule,
     HttpModule,
     JsonpModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        redirectTo: '/about',
-        pathMatch: 'full'
-      },
-      {
-        path: 'setting',
-        component: SettingComponent
-      },
-      {
-        path: 'about',
-        component: AboutComponent
-      },
-      {
-        path: 'cluster',
-        component: ClusterComponent
-      },
-      {
-        path: 'query',
-        component: QueryComponent
-      }
-    ])
+    AppRoutingModule
   ],
   declarations: [ 
     AppComponent, 
     SettingComponent,
     AboutComponent,
-    ClusterComponent,
+//    ClusterComponent,
     QueryComponent 
   ],
   providers: [ 
