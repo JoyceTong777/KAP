@@ -11,6 +11,7 @@ export class AlasqldbService {
   constructor(private resourceService: ResourceService) {
     this.dbInstance = new alasql.Database('KapDatabase');
     this.createResourceTable();
+    console.log('construct');
   }
 
   createResourceTable() {
@@ -45,7 +46,8 @@ export class AlasqldbService {
  * 
  * @memberOf AlasqldbService
  */
-  executeCommand(command: string) {
-    return this.dbInstance.exec(command);
+  executeCommand(command: string): Promise<any> {
+    this.updataDatabase();
+    return alasql.promise(['USE KapDatabase', command]);
   }
 }

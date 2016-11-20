@@ -1,0 +1,17 @@
+<div *ngIf="!errorMessage">
+  <table class="table">
+    <thead class="thead-default">
+      <tr>
+        <th *ngFor="let item of title">{{item}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of queryResult">
+        <td *ngFor="let key of title">{{row[key]}}</td>
+      </tr>
+    </tbody>
+  </table> 
+</div>
+<div *ngIf="errorMessage">
+  <p>{{errorMessage}}</p>
+</div>

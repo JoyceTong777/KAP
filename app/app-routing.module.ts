@@ -26,7 +26,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'query',
-    component: QueryComponent
+    loadChildren: 'app/query/query.module#QueryModule'
   }
 ];
 

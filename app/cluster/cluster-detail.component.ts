@@ -11,12 +11,9 @@ import { ActivatedRoute } from '@angular/router';
 
 export class ClusterDetailComponent implements OnInit {
 
- // rawUrl = 'https://www.baidu.com';
   trustedUrl: SafeResourceUrl;
 
-  constructor(private sanitizer: DomSanitizer, private route: ActivatedRoute) { 
-  //  this.trustedUrl = sanitizer.bypassSecurityTrustResourceUrl(this.rawUrl);
-  }
+  constructor(private sanitizer: DomSanitizer, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params

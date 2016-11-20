@@ -1,19 +1,23 @@
 
 import { Component } from '@angular/core';
-import { ResourceService } from './../shared/resource.service';
 import { AlasqldbService } from './../shared/alasqldb.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'tg-query',
   moduleId: module.id,
-  templateUrl: 'query.component.html'
+  templateUrl: 'query.component.html',
+  styleUrls: ['query.component.css']
 })
 
 export class QueryComponent { 
-  constructor(private resourceService: ResourceService, private alasqldbService: AlasqldbService) { }
+  constructor(private router: Router, private alasqldbService: AlasqldbService) { }
 
   consoleResource() {
-    this.alasqldbService.updataDatabase();
 //    console.log(this.alasqldbService.executeCommand('select cluster from nodes'));
+  }
+
+  query(sql: string) {
+    this.router.navigate(['/query/result', sql]);
   }
 }

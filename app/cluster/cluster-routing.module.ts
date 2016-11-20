@@ -13,7 +13,8 @@ const clusterRouter: Routes = [
       { path: 'list', component: ClusterListComponent },
       { path: '', redirectTo: 'list', pathMatch: 'full'}
     ]
-}];
+  }
+];
 
 @NgModule({
   imports: [
