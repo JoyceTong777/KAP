@@ -17,10 +17,11 @@
     "webdriver:update": "webdriver-manager update",
     "html": "find ./app -name '*.html' -type f -exec gcp -rf --parents {} ./dist \\;",
     "css": "find ./app -name '*.css' -type f -exec gcp -rf --parents {} ./dist \\;",
+    "lib": "cp -rf ./app/vendors ./dist/app",
     "pic": "cp -rf ./app/images ./dist/app",
-    "file": "npm run html && npm run css && npm run pic",
+    "file": "npm run html && npm run css && npm run lib && npm run pic",
     "clean": "rm -rf dist/*.*",
-    "build": "tsc && gulp",
+    "build": "tsc && npm run file && gulp",
     "prod": "npm run build && cd build && npm i && node index.js",
     "prebuild": "tsc && npm run file && gulp server && gulp app "
   },

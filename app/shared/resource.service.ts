@@ -12,7 +12,7 @@ export class ResourceService {
   constructor(private indexdbService: IndexdbService, private http: Http) { }
 
 /**
- * Get ip and token from IndexDB, Then get resources info from kube-apiserver.
+ * Get ip and token from indexdb, Then get resources info from kube-apiserver.
  * 
  * 
  * @memberOf ResourceService

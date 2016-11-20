@@ -15,7 +15,7 @@ export class IndexdbService {
 
   openDatabase() {
     this.dbInstance.open().catch(function(error: any) {
-      console.log("Open indexDB: " + error);
+      console.log("Open indexdb: " + error);
     })
   }
 
@@ -33,7 +33,7 @@ export class IndexdbService {
   }
 
 /**
- * Get the List of Apiserver info from IndexDB;
+ * Get the List of Apiserver info from indexdb;
  * 
  * @returns IndexdbApiserver[]
  * 
@@ -66,7 +66,7 @@ export class IndexdbService {
   }
 
 /**
- * Get the List of Apiserver info from IndexDB and resolve the data as a Promise;
+ * Get the List of Apiserver info from indexdb and resolve the data as a Promise;
  * 
  * @returns Promise
  * 

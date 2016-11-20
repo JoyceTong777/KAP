@@ -10,12 +10,14 @@ RUN mkdir -p /quickstart /home/nodejs && \
     useradd -r -g nodejs -d /home/nodejs -s /sbin/nologin nodejs && \
     chown -R nodejs:nodejs /home/nodejs
 
-WORKDIR /quickstart
-COPY package.json /quickstart/
+WORKDIR /build
+
+COPY ./build /build
+
+RUN chown -R nodejs:nodejs /build
+
 RUN npm install --unsafe-perm=true
 
-COPY . /quickstart
-RUN chown -R nodejs:nodejs /quickstart
 USER nodejs
 
 CMD npm start

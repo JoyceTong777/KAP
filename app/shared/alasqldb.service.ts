@@ -11,7 +11,6 @@ export class AlasqldbService {
   constructor(private resourceService: ResourceService) {
     this.dbInstance = new alasql.Database('KapDatabase');
     this.createResourceTable();
-    console.log('construct');
   }
 
   createResourceTable() {
